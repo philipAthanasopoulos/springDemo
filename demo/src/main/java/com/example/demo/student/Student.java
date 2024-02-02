@@ -12,15 +12,8 @@ import java.time.Period;
 @Table
 public class Student {
     @Id
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
-    )
+    @SequenceGenerator(name = "student_sequence", sequenceName = "student_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
 
     private Long id;
     private String name;
@@ -29,11 +22,8 @@ public class Student {
     private LocalDate dateOfBirth;
     private String email;
 
-
     public Student() {
     }
-
-    ;
 
     public Student(Long id, String name, LocalDate dateOfBirth, String email) {
         this.id = id;
@@ -90,12 +80,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", dateOfBirth=" + dateOfBirth +
-                ", email='" + email + '\'' +
-                '}';
+        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", dateOfBirth=" + dateOfBirth + ", email='" + email + '\'' + '}';
     }
 }
